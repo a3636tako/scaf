@@ -39,7 +39,7 @@ public class Parameters {
 
 			case 1:
 				if(current.startsWith("--") || current.startsWith("-")) {
-					result.put(optionName, "");
+					result.put(optionName, Boolean.TRUE.toString());
 				}else {
 					result.put(optionName, current);
 					current = next(iterator);
@@ -50,7 +50,7 @@ public class Parameters {
 			}
 		}
 		if(optionName != null) {
-			result.put(optionName, "");
+			result.put(optionName, Boolean.TRUE.toString());
 		}
 		return result;
 	}
